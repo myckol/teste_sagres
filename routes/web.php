@@ -25,3 +25,7 @@ Route::resource('alunos', 'AlunoController');
 Route::resource('disciplinas', 'DisciplinaController');
 
 Route::resource('notas', 'NotaController');
+
+Route::resource('alunos', 'AlunoController');
+
+Route::resource('alunos', 'AlunoController');

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateNotaRequest;
 use App\Http\Requests\UpdateNotaRequest;
+use App\Repositories\DisciplinaRepository;
 use App\Repositories\NotaRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
@@ -15,10 +16,12 @@ class NotaController extends AppBaseController
 {
     /** @var  NotaRepository */
     private $notaRepository;
+    private $disciplinasRepository;
 
-    public function __construct(NotaRepository $notaRepo)
+    public function __construct(NotaRepository $notaRepo,DisciplinaRepository $disciplinaRepo)
     {
         $this->notaRepository = $notaRepo;
+        $this->disciplinasRepository = $disciplinaRepo;
     }
 
     /**
@@ -30,7 +33,7 @@ class NotaController extends AppBaseController
     public function index(Request $request)
     {
         $this->notaRepository->pushCriteria(new RequestCriteria($request));
-        $notas = $this->notaRepository->all();
+        $notas = $this->notaRepository->lists('id');
 
         return view('notas.index')
             ->with('notas', $notas);
@@ -43,7 +46,8 @@ class NotaController extends AppBaseController
      */
     public function create()
     {
-        return view('notas.create');
+        $disciplinas = $this->disciplinasRepository->all(['codigo','disciplina']);
+        return view('notas.create')->with('disciplinas',$disciplinas);
     }
 
     /**

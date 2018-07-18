@@ -8,7 +8,7 @@ use InfyOm\Generator\Common\BaseRepository;
 /**
  * Class AlunoRepository
  * @package App\Repositories
- * @version July 18, 2018, 6:46 pm UTC
+ * @version July 18, 2018, 7:31 pm UTC
  *
  * @method Aluno findWithoutFail($id, $columns = ['*'])
  * @method Aluno find($id, $columns = ['*'])

@@ -7,7 +7,7 @@
 <!-- Iddisciplina Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('iddisciplina', 'Iddisciplina:') !!}
-    {!! Form::number('iddisciplina', null, ['class' => 'form-control']) !!}
+    {!! Form::select('iddisciplina', $disciplinas, null,['class' => 'form-control']) !!}
 </div>
 
 <!-- Nota1 Field -->

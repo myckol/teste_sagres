@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * Class Aluno
  * @package App\Models
- * @version July 18, 2018, 6:46 pm UTC
+ * @version July 18, 2018, 7:31 pm UTC
  *
  * @property \App\Models\Tbdisciplina tbdisciplina
  * @property \Illuminate\Database\Eloquent\Collection Tbnota
@@ -76,7 +76,7 @@ class Aluno extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      **/
-    public function disciplina()
+    public function tbdisciplina()
     {
         return $this->hasOne(\App\Models\Disciplina::class);
     }
@@ -84,7 +84,7 @@ class Aluno extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      **/
-    public function notas()
+    public function tbnotas()
     {
         return $this->hasMany(\App\Models\Nota::class);
     }
