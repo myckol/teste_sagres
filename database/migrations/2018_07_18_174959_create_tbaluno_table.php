@@ -16,7 +16,7 @@ class CreateTbalunoTable extends Migration
         Schema::create('tbaluno', function (Blueprint $table) {
             $table->increments('id');
             $table->string('matricula', 30);
-            $table->string('name', 40);
+            $table->string('nome', 40);
             $table->string('endereco', 100);
             $table->string('bairro', 50);
             $table->string('cep', 50);
